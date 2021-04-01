@@ -10,12 +10,12 @@ jobs:
     runs-on: ubuntu-18.04
     steps:
       - uses: actions/checkout@v2
-      - name: Build docker.pkg.github.com/day8/dockerfile-for-dev-ci-image/dev-ci
+      - name: Build docker.pkg.github.com/sboardwell/dockerfile-for-dev-ci-image/dev-ci
         uses: elgohr/Publish-Docker-Github-Action@2.19
         with:
           name: dev-ci
           tag_semver: true
-          registry: docker.pkg.github.com/day8/dockerfile-for-dev-ci-image
+          registry: docker.pkg.github.com/sboardwell/dockerfile-for-dev-ci-image
           username: ${{ github.repository_owner }}
           password: ${{ secrets.GLOBAL_TOKEN_FOR_GITHUB }}
       - name: Slack notification
